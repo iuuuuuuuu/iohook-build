@@ -1,0 +1,6 @@
+C:\workProject\iohook-build-master\libuiohook\src\logger.c;C:\workProject\iohook-build-master\build\Release\obj\uiohook\libuiohook\src\logger.obj
+C:\workProject\iohook-build-master\libuiohook\src\windows\input_helper.c;C:\workProject\iohook-build-master\build\Release\obj\uiohook\libuiohook\src\windows\input_helper.obj
+C:\workProject\iohook-build-master\libuiohook\src\windows\input_hook.c;C:\workProject\iohook-build-master\build\Release\obj\uiohook\libuiohook\src\windows\input_hook.obj
+C:\workProject\iohook-build-master\libuiohook\src\windows\post_event.c;C:\workProject\iohook-build-master\build\Release\obj\uiohook\libuiohook\src\windows\post_event.obj
+C:\workProject\iohook-build-master\libuiohook\src\windows\system_properties.c;C:\workProject\iohook-build-master\build\Release\obj\uiohook\libuiohook\src\windows\system_properties.obj
+C:\workProject\iohook-build-master\node_modules\node-gyp\src\win_delay_load_hook.cc;C:\workProject\iohook-build-master\build\Release\obj\uiohook\win_delay_load_hook.obj
