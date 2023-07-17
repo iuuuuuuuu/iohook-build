@@ -2,16 +2,19 @@
 
 node build.js --runtime electron --version 19.1.9 --abi 106
  //Put `iohook.node` and `uihook.dll` (or `.so` or `.dylib`, depending on your operating system) into the `builds` directory as expected by iohook. See again the error message for details about the directory structure.
+ 如果要打包不同版本的node就这样子 electron版本+node abi
+ node build.js --runtime electron --version 24.6.2 --abi 106 nodejs ---abi 114
 ```
 
+node-gyp 版本需要一致 本地和 项目中的 需要一致,而且不能有中文路径!
 
-node-gyp版本需要一致 本地和 项目中的 需要一致,而且不能有中文路径!
-  - npm i windos-build-tools --producton
-  - npm i node-gyp -g
-  - 本地需要安装 Visual Studio 2022 要安装c++开发环境 不是桌面开发 就可以编译了
-  - node-abi 获取版本 .getAbli('13.0.0','electron')
-<img src="./asset/1.png">
-<img src="./asset/2.png">
+- npm i windos-build-tools --producton
+- npm i node-gyp -g
+- 本地需要安装 Visual Studio 2022 要安装 c++开发环境 不是桌面开发 就可以编译了
+- node-abi 获取版本 .getAbli('13.0.0','electron')
+  <img src="./asset/1.png">
+  <img src="./asset/2.png">
+
 # iohook-build
 
 This repository contains an augmented copy of the npm release of `iohook`(<https://www.npmjs.com/package/iohook>) in version 0.9.3, downloaded on 19th November 2021. This repository is not intended for general use but serves me as medium to build another project. The need for this repository is caused by the approach for deployment of the `iohook` module. The core of that module is written in native code, which must be compiled for each combination of operating system, cpu architecture, Node.js, and Electron version. In my project, I require support for at least both Windows x86_64 bit and macOS ARM64 and a specific Electron version. As there exist no prebuilt binaries for these combinations and the unavailable prebuilt binaries cause `npm install iohook` even to fails on macOS, I have decided to create this repository that mocks a release of the iohook that can be easily integrated into the standard npm / Node.js workflow. See an issue I commented on in the `iohook` repository on GitHub: <https://github.com/wilix-team/iohook/issues/315#issuecomment-972921484>
@@ -22,7 +25,7 @@ I have made the following changes to the original release as downloaded from npm
 
 1. I put prebuilt binaries for my target systems under the `builds` directory.
 1. I removed the `install.js` execution from the `npm install` command, as the script attempts to download other prebuilt binaries than what I need. Moreover, it even causes the installation to crash on macOS ARM64.
-1. I removed ***all*** runtime dependencies as it appears that they are exclusively used in the `install.js` to gather prebuilt binaries from the Web. This even removes all known rumtime vulnerabilies, according to npm :)
+1. I removed **_all_** runtime dependencies as it appears that they are exclusively used in the `install.js` to gather prebuilt binaries from the Web. This even removes all known rumtime vulnerabilies, according to npm :)
 
 ## How to use this release in a project
 
